@@ -9,17 +9,41 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:src="@drawable/qw"
     tools:context="com.vishwanathgowdak.makeyourmagic.MainActivity" >
-    <EditText
-        android:id="@+id/end_text"
+    
+    <TextView
+        android:id="@+id/start_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="57dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="25dp"
+        android:textColor="#000000"
+        android:textSize="30sp"
         android:ems="10"
-        android:hint="@string/abc" >
-
+        android:hint="@string/start_text" >
+	</TextView>
+	
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/start_text"
+        android:layout_toRightOf="@id/start_text"
+        />
+    
+    <EditText
+        android:id="@+id/end_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinner1"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="157dp"
+        android:ems="10"
+        android:hint="@string/abc" 
+        android:singleLine="true">
+		
         <requestFocus />
     </EditText>
 
@@ -32,5 +56,7 @@
         android:layout_marginTop="30dp"
         android:onClick="sendMessage"
         android:text="Click to see Magic..!!" />
+
+    
 
 </RelativeLayout>

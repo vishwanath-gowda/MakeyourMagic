@@ -16,11 +16,15 @@ public class DisplayMessageActivity extends ActionBarActivity {
        Intent intent = getIntent();
        TextView tv = (TextView)findViewById(R.id.textView1);
        String incoming  = intent.getExtras().getString("EXTRA_MESSAGE");
-       if( incoming.equalsIgnoreCase("ji boom baa")){
-    	   tv.setText("Le ninouna, app nal enthad le magic");
+       if(intent.getExtras().getString("LANG").equalsIgnoreCase(getString(R.string.kannda))){
+	       if( incoming.equalsIgnoreCase("ji boom baa")){
+	    	   tv.setText(getString(R.string.Kannada_JiBoomBa_res));
+	       }else{
+	       //tv.setText(intent.getExtras().getString("EXTRA_MESSAGE"));
+	    	   tv.setText(getString(R.string.Kannada_Mangya));
+	       }
        }else{
-       tv.setText(intent.getExtras().getString("EXTRA_MESSAGE"));
-       
+    	   tv.setText(getString(R.string.Kannada_selectmadu));
        }
     
     }

@@ -16,5 +16,17 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+    
+    
+    <style name="MyTheme" parent="android:Theme">
+        <item name="android:windowTitleSize">50px</item>
+        <item name="android:windowTitleBackgroundStyle">@style/WindowTitleBackground
+        </item>
+
+    </style>
+	<style name="WindowTitleBackground" >
+        <item name="android:background">@android:color/transparent
+        </item>
+    </style>
 
 </resources>
