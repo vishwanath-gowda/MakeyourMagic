@@ -9,24 +9,28 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:src="@drawable/qw"
     tools:context="com.vishwanathgowdak.makeyourmagic.MainActivity" >
-  
     <EditText
         android:id="@+id/end_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="0dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="57dp"
         android:ems="10"
-        android:hint="@string/abc" />
+        android:hint="@string/abc" >
+
+        <requestFocus />
+    </EditText>
+
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/end_text"
-        android:layout_toRightOf="@id/end_text"
-        android:text="Click to see Maggic..!!" 
-        android:onClick="sendMessage"/>
+        android:layout_below="@+id/end_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:onClick="sendMessage"
+        android:text="Click to see Magic..!!" />
 
 </RelativeLayout>
