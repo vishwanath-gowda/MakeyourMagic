@@ -1,8 +1,5 @@
 package com.vishwanathgowdak.makeyourmagic;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -13,6 +10,8 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import com.example.example.R;
 
@@ -25,6 +24,13 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+        String[] lang = this.getResources().getStringArray(R.array.Language);
+        String[] slangs = this.getResources().getStringArray(R.array.Slangs);
+        String[] misType = this.getResources().getStringArray(R.array.Mistype);
+        Resource.LanguageMap.init(lang,slangs,misType);
         
      // Spinner element
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
@@ -32,18 +38,8 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
      // Spinner click listener
         spinner.setOnItemSelectedListener(this);
         
-     // Spinner Drop down elements
-        List<String> categories = new ArrayList<String>();
-        categories.add("SELECT");
-        categories.add("English");
-        categories.add("Spanish");
-        categories.add(getString(R.string.kannda));
-        categories.add("Hindi");
-        categories.add("Telugu");
-        categories.add("Tamil");
-        
         // Creating adapter for spinner
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Resource.LanguageMap.getArrayListofLang());
         
         // Drop down layout style - list view with radio button
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

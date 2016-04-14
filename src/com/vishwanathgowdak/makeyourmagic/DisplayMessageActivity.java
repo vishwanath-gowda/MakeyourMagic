@@ -2,6 +2,9 @@ package com.vishwanathgowdak.makeyourmagic;
 
 import com.example.example.R;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -13,19 +16,26 @@ public class DisplayMessageActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
     	super.onCreate(savedInstanceState);
         setContentView(R.layout.second_activity);
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
        Intent intent = getIntent();
        TextView tv = (TextView)findViewById(R.id.textView1);
-       String incoming  = intent.getExtras().getString("EXTRA_MESSAGE");
-       if(intent.getExtras().getString("LANG").equalsIgnoreCase(getString(R.string.kannda))){
-	       if( incoming.equalsIgnoreCase("ji boom baa")){
-	    	   tv.setText(getString(R.string.Kannada_JiBoomBa_res));
-	       }else{
-	       //tv.setText(intent.getExtras().getString("EXTRA_MESSAGE"));
-	    	   tv.setText(getString(R.string.Kannada_Mangya));
-	       }
+       String message  = intent.getExtras().getString("EXTRA_MESSAGE");
+       String language  = intent.getExtras().getString("LANG");
+       if(message.equalsIgnoreCase("ji boom baa")){
+    	   String slang = Resource.LanguageMap.getSlang(language);
+    	   if(slang!=null){
+    		   tv.setText(slang);
+    	   }
+    	   
        }else{
-    	   tv.setText(getString(R.string.Kannada_selectmadu));
+    	   String misTypeText = Resource.LanguageMap.getMisType(language);
+    	   if(misTypeText!=null){
+    		   tv.setText(misTypeText);
+    	   }
        }
+       
     
     }
     
