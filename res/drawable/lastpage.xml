@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+	android:drawable="@drawable/last_a"
+	android:duration="75" />
+    
+	<item
+	android:drawable="@drawable/last_b"
+	android:duration="75" />
+	
+	<item
+	android:drawable="@drawable/last_c"
+	android:duration="75" />
+	
+	<item
+	android:drawable="@drawable/last_d"
+	android:duration="75" />
+ 
+	<item
+	android:drawable="@drawable/last_e"
+	android:duration="75" />
+	
+	<item
+	android:drawable="@drawable/last_f"
+	android:duration="75" />
+	
+	<item
+	android:drawable="@drawable/last_g"
+	android:duration="75" />
+	
+	<item
+	android:drawable="@drawable/last_h"
+	android:duration="75" />
+</animation-list>

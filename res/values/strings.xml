@@ -28,5 +28,7 @@
         <item>Type as shown in text box hint</item>
         <item>Telugu not supported</item>
     </string-array>
+    
+    <string name="fool_message">HA HA HA FOOL</string>
 
 </resources>

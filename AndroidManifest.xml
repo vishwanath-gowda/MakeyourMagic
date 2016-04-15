@@ -19,7 +19,7 @@
         <meta-data android:name="com.google.android.gms.version"
         android:value="@integer/google_play_services_version" />
         <activity
-            android:name="com.vishwanathgowdak.makeyourmagic.MainActivity"
+            android:name="com.vishwanathgowdak.makeyourmagic.WelcomePage"
             android:windowSoftInputMode="adjustPan|adjustResize"
             android:screenOrientation="portrait"
             android:label="@string/app_name" >
@@ -30,7 +30,22 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="com.vishwanathgowdak.makeyourmagic.MainActivity"
+            android:windowSoftInputMode="adjustPan|adjustResize"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name" >
+            <!-- <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter> -->
+        </activity>
+        <activity
             android:name="com.vishwanathgowdak.makeyourmagic.DisplayMessageActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.vishwanathgowdak.makeyourmagic.EndPage"
             android:label="@string/app_name" >
         </activity>
         <activity android:name="com.google.android.gms.ads.AdActivity"

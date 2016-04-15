@@ -7,6 +7,7 @@ import com.google.android.gms.ads.AdView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.widget.TextView;
 
@@ -35,6 +36,15 @@ public class DisplayMessageActivity extends ActionBarActivity {
     		   tv.setText(misTypeText);
     	   }
        }
+       
+       
+       int secondsDelayed = 1;
+       new Handler().postDelayed(new Runnable() {
+               public void run() {
+                       startActivity(new Intent(DisplayMessageActivity.this, EndPage.class));
+                       finish();
+               }
+       }, secondsDelayed * 3000);
        
     
     }
