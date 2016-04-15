@@ -34,6 +34,8 @@ public class DisplayMessageActivity extends ActionBarActivity {
     	   String misTypeText = Resource.LanguageMap.getMisType(language);
     	   if(misTypeText!=null){
     		   tv.setText(misTypeText);
+    	   }else{
+    		   tv.setText("Select prefered language");
     	   }
        }
        
@@ -44,7 +46,7 @@ public class DisplayMessageActivity extends ActionBarActivity {
                        startActivity(new Intent(DisplayMessageActivity.this, EndPage.class));
                        finish();
                }
-       }, secondsDelayed * 3000);
+       }, secondsDelayed * 10000);
        
     
     }

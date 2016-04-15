@@ -3,22 +3,42 @@ package com.vishwanathgowdak.makeyourmagic;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.TextView;
 import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.TextView;
 
 import com.example.example.R;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 
 public class EndPage extends ActionBarActivity implements OnItemSelectedListener {
-	
+	InterstitialAd mInterstitialAd;
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.end_actvity);
+        AdView mAdView = (AdView) findViewById(R.id.adView1);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-8591460773245129/4371594094");
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdClosed() {
+                requestNewInterstitial();
+                            }
+        });
+
+        requestNewInterstitial();
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        }
         
         AnimationDrawable ad = (AnimationDrawable) getResources().getDrawable(R.drawable.lastpage);
     	View iv1 = (View) findViewById(R.id.endView);
@@ -29,6 +49,10 @@ public class EndPage extends ActionBarActivity implements OnItemSelectedListener
 		tvlast.setText(getString(R.string.fool_message));
 		
         
+    }
+    private void requestNewInterstitial() {
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mInterstitialAd.loadAd(adRequest);
     }
     
     @Override
@@ -65,7 +89,7 @@ public class EndPage extends ActionBarActivity implements OnItemSelectedListener
 
 	@Override
 	public void onNothingSelected(AdapterView<?> parent) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
