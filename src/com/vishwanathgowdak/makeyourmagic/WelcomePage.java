@@ -5,14 +5,12 @@ import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
-
-import com.example.example.R;
+import com.vishwanathgowda.makeyourmagic.*;
 
 public class WelcomePage extends Activity implements OnItemSelectedListener {
 	
