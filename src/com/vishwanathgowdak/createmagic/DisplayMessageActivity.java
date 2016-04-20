@@ -43,6 +43,8 @@ public class DisplayMessageActivity extends ActionBarActivity {
 				delayTask = new Delay();
 				delay.postDelayed(delayTask, secondsDelayed * 1000);
 
+			}else{
+				tv.setText("Select prefered language");
 			}
 		}
 		else{
