@@ -10,7 +10,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
-import com.vishwanathgowda.makeyourmagic.*;
+import com.vishwanathgowdak.gen.*;
 
 public class WelcomePage extends Activity implements OnItemSelectedListener {
 	

@@ -1,6 +1,6 @@
 package com.vishwanathgowdak.createmagic;
 
-import com.vishwanathgowda.makeyourmagic.*;
+import com.vishwanathgowdak.gen.*;
 import com.vishwanathgowdak.createmagic.util.MagicUtil;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;

@@ -2,8 +2,8 @@ package com.vishwanathgowdak.createmagic.util;
 
 import java.lang.reflect.Field;
 
-import com.vishwanathgowda.makeyourmagic.R;
-import com.vishwanathgowda.makeyourmagic.R.drawable;
+import com.vishwanathgowdak.gen.*;
+import com.vishwanathgowdak.gen.R.drawable;
 
 public class MagicUtil {
 	

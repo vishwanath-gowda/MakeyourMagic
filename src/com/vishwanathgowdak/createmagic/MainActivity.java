@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-import com.vishwanathgowda.makeyourmagic.*;
+import com.vishwanathgowdak.gen.*;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
